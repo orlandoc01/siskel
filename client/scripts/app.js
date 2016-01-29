@@ -1,6 +1,5 @@
 var Movie = Backbone.Model.extend({
-  initialize: function(title) {
-    this.set('title', title);
+  initialize: function() {
   },
 
   defaults: {
