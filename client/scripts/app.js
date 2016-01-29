@@ -1,4 +1,7 @@
 var Movie = Backbone.Model.extend({
+  initialize: function(title) {
+    this.set('title', title);
+  },
 
   defaults: {
     like: true
@@ -14,14 +17,16 @@ var Movies = Backbone.Collection.extend({
 
   model: Movie,
 
-  initialize: function() {
+  initialize: function(field) {
     // your code here
+    this.set('comparator', field);
   },
 
   comparator: 'title',
 
   sortByField: function(field) {
     // your code here
+    this.comparator = field;
   }
 
 });
